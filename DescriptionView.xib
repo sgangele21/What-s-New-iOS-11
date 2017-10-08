@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DescriptionView" customModule="What_s_New_Page" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="315" height="129"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Music" translatesAutoresizingMaskIntoConstraints="NO" id="exA-op-ThZ">
+                    <rect key="frame" x="15" y="44.5" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="egr-RL-HU8"/>
+                        <constraint firstAttribute="width" secondItem="exA-op-ThZ" secondAttribute="height" multiplier="1:1" id="ehk-0l-VAI"/>
+                        <constraint firstAttribute="width" constant="40" id="vKO-yA-S1g"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description  Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suf-Sf-PBH">
+                    <rect key="frame" x="85" y="54.5" width="214" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="suf-Sf-PBH" firstAttribute="centerY" secondItem="exA-op-ThZ" secondAttribute="centerY" id="0gM-O9-xCK"/>
+                <constraint firstItem="suf-Sf-PBH" firstAttribute="leading" secondItem="exA-op-ThZ" secondAttribute="trailing" constant="30" id="1T8-rz-gNV"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="suf-Sf-PBH" secondAttribute="trailing" constant="16" id="E0M-Qo-Feg"/>
+                <constraint firstItem="exA-op-ThZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="eWf-cA-otk"/>
+                <constraint firstItem="exA-op-ThZ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="yq5-eg-Mhx"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="suf-Sf-PBH" id="Rdh-cP-nc7"/>
+                <outlet property="imageView" destination="exA-op-ThZ" id="jqi-t0-ICf"/>
+            </connections>
+            <point key="canvasLocation" x="-180.5" y="-57.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Music" width="72" height="66"/>
+    </resources>
+</document>
