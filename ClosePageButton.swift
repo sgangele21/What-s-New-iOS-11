@@ -19,7 +19,6 @@ public class ClosePageButton: UIButton {
         return [.foregroundColor:UIColor.white, .font:self.buttonTitleFont]
     }
     
-    
     public init(frame: CGRect, backgroundColor: UIColor, buttonTitle: String) {
         super.init(frame: frame)
         self.backgroundColor = backgroundColor
