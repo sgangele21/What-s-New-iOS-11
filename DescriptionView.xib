@@ -24,10 +24,16 @@
                         <constraint firstAttribute="width" constant="40" id="vKO-yA-S1g"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description  Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suf-Sf-PBH">
-                    <rect key="frame" x="85" y="54.5" width="214" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suf-Sf-PBH">
+                    <rect key="frame" x="85" y="0.0" width="214" height="129"/>
+                    <attributedString key="attributedText">
+                        <fragment>
+                            <string key="content">You can watch any sports event for free, and take advantage of our buy 1 get seventy 9 free deal where you're a dumbass and if you order today, you're an extra dumbass</string>
+                            <attributes>
+                                <font key="NSFont" metaFont="system" size="17"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
@@ -37,6 +43,8 @@
                 <constraint firstItem="suf-Sf-PBH" firstAttribute="leading" secondItem="exA-op-ThZ" secondAttribute="trailing" constant="30" id="1T8-rz-gNV"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="suf-Sf-PBH" secondAttribute="trailing" constant="16" id="E0M-Qo-Feg"/>
                 <constraint firstItem="exA-op-ThZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="eWf-cA-otk"/>
+                <constraint firstItem="suf-Sf-PBH" firstAttribute="top" relation="lessThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="top" id="eiW-fs-bmX"/>
+                <constraint firstItem="suf-Sf-PBH" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="p3s-eL-ek9"/>
                 <constraint firstItem="exA-op-ThZ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="yq5-eg-Mhx"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

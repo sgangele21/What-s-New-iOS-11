@@ -13,16 +13,25 @@ public class DescriptionView: UIView {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    var descriptionTitleFont: UIFont {
-        return UIFont.boldSystemFont(ofSize: 20.0)
+    var appDescriptionTitleFont: UIFont = UIFont.boldSystemFont(ofSize: 20.0) {
+        didSet {
+            let attributedText = self.descriptionLabel.attributedText as! NSMutableAttributedString
+            attributedText.addAttribute(.font, value: self.appDescriptionTitleFont, range: self.fullDescription.range(string: self.appDescriptionTitle))
+        }
     }
     
-    var appDescriptionFont: UIFont {
-        return UIFont.systemFont(ofSize: 19.0, weight: .regular)
+    var appDescriptionFont: UIFont = UIFont.systemFont(ofSize: 19.0, weight: .regular) {
+        didSet {
+            let attributedText = self.descriptionLabel.attributedText as! NSMutableAttributedString
+            attributedText.addAttribute(.font, value: self.appDescriptionFont, range: self.fullDescription.range(string: self.appDescription))
+        }
     }
     
-    var descriptionTitle = ""
+    var appDescriptionTitle = ""
     var appDescription = ""
+    var fullDescription : String {
+        return "\(self.appDescriptionTitle)\n\(self.appDescription)"
+    }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -41,7 +50,7 @@ public class DescriptionView: UIView {
         let descriptionView = nib.instantiate(withOwner: self, options: nil)[0] as! DescriptionView
         
         descriptionView.frame            = frame
-        descriptionView.descriptionTitle = descriptionTitle
+        descriptionView.appDescriptionTitle = descriptionTitle
         descriptionView.appDescription   = description
         descriptionView.imageView.image  = image
         descriptionView.setupLabel()
@@ -50,15 +59,16 @@ public class DescriptionView: UIView {
     }
     
     public func setupLabel(descriptionTitle: String, description: String) {
-        self.descriptionTitle = descriptionTitle
-        self.appDescription   = description
-        let fullText          = "\(descriptionTitle)\n\(description)"
+        self.appDescriptionTitle = descriptionTitle
+        self.appDescription      = description
+        let fullText             = self.fullDescription
         
-        let attributedText       = NSMutableAttributedString(string: fullText)
-        let paragraphStyle       = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .left
+        let attributedText           = NSMutableAttributedString(string: fullText)
+        let paragraphStyle           = NSMutableParagraphStyle()
+        paragraphStyle.alignment     = .left
+        paragraphStyle.lineBreakMode = .byTruncatingTail
         
-        attributedText.addAttribute(.font, value: self.descriptionTitleFont, range: fullText.range(string: descriptionTitle))
+        attributedText.addAttribute(.font, value: self.appDescriptionTitleFont, range: fullText.range(string: descriptionTitle))
         attributedText.addAttribute(.paragraphStyle, value: paragraphStyle, range: fullText.range(string: fullText))
         attributedText.addAttribute(.font, value: self.appDescriptionFont, range: fullText.range(string: description))
         
@@ -66,7 +76,7 @@ public class DescriptionView: UIView {
     }
     
     public func setupLabel() {
-        self.setupLabel(descriptionTitle: self.descriptionTitle, description: self.appDescription)
+        self.setupLabel(descriptionTitle: self.appDescriptionTitle, description: self.appDescription)
     }
     
     

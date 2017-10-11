@@ -14,7 +14,7 @@ public class DescriptionStackView: UIStackView {
         super.init(frame: frame)
         self.spacing = 20.0
         self.axis = .vertical
-        
+        self.distribution = .equalSpacing
     }
     
     public required init(coder: NSCoder) {
@@ -26,9 +26,14 @@ public class DescriptionStackView: UIStackView {
     }
     
     public override func didMoveToSuperview() {
+        var totalHeight: CGFloat = 0.0
+        for subview in self.arrangedSubviews {
+            totalHeight += subview.frame.height
+        }
+        let buffer = 10.0 * CGFloat(self.arrangedSubviews.count)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.widthAnchor.constraint(equalToConstant: self.frame.size.width).isActive   = true
-        self.heightAnchor.constraint(equalToConstant: self.frame.size.height).isActive = true
+        self.heightAnchor.constraint(equalToConstant: totalHeight + buffer).isActive = true
     }
     
 }
