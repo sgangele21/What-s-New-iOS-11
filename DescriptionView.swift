@@ -38,12 +38,6 @@ public class DescriptionView: UIView {
         print("aDecoder was called damnit!")
     }
     
-    public override func didMoveToSuperview() {
-        self.translatesAutoresizingMaskIntoConstraints = false
-        self.widthAnchor.constraint(equalToConstant: self.frame.size.width).isActive   = true
-        self.heightAnchor.constraint(equalToConstant: self.frame.size.height).isActive = true
-    }
-    
     public static func loadFromNib(frame: CGRect, descriptionTitle: String, description: String, image: UIImage) -> DescriptionView {
         let bundle = Bundle.main
         let nib = UINib(nibName: "DescriptionView", bundle: bundle)
@@ -78,8 +72,6 @@ public class DescriptionView: UIView {
     public func setupLabel() {
         self.setupLabel(descriptionTitle: self.appDescriptionTitle, description: self.appDescription)
     }
-    
-    
     
 }
 

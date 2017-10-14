@@ -29,6 +29,7 @@ public class DescriptionStackView: UIStackView {
         var totalHeight: CGFloat = 0.0
         for subview in self.arrangedSubviews {
             totalHeight += subview.frame.height
+            print(subview.frame.height)
         }
         let buffer = 10.0 * CGFloat(self.arrangedSubviews.count)
         self.translatesAutoresizingMaskIntoConstraints = false
