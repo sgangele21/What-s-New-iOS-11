@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,23 +29,23 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Music" translatesAutoresizingMaskIntoConstraints="NO" id="exA-op-ThZ">
-                    <rect key="frame" x="0.0" y="47" width="40" height="40"/>
+                    <rect key="frame" x="0.0" y="40" width="50" height="50"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="egr-RL-HU8"/>
+                        <constraint firstAttribute="height" constant="50" id="egr-RL-HU8"/>
                         <constraint firstAttribute="width" secondItem="exA-op-ThZ" secondAttribute="height" multiplier="1:1" id="ehk-0l-VAI"/>
-                        <constraint firstAttribute="width" constant="40" id="vKO-yA-S1g"/>
+                        <constraint firstAttribute="width" constant="50" id="vKO-yA-S1g"/>
                     </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="suf-Sf-PBH" firstAttribute="centerY" secondItem="exA-op-ThZ" secondAttribute="centerY" constant="-2.5" id="0gM-O9-xCK"/>
-                <constraint firstItem="suf-Sf-PBH" firstAttribute="leading" secondItem="exA-op-ThZ" secondAttribute="trailing" constant="30" id="1T8-rz-gNV"/>
+                <constraint firstItem="suf-Sf-PBH" firstAttribute="centerY" secondItem="exA-op-ThZ" secondAttribute="centerY" constant="-0.5" id="0gM-O9-xCK"/>
+                <constraint firstItem="suf-Sf-PBH" firstAttribute="leading" secondItem="exA-op-ThZ" secondAttribute="trailing" constant="20" id="1T8-rz-gNV"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="suf-Sf-PBH" secondAttribute="trailing" id="E0M-Qo-Feg"/>
                 <constraint firstItem="exA-op-ThZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="eWf-cA-otk"/>
                 <constraint firstItem="suf-Sf-PBH" firstAttribute="top" relation="lessThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="top" id="eiW-fs-bmX"/>
                 <constraint firstItem="suf-Sf-PBH" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="p3s-eL-ek9"/>
-                <constraint firstItem="exA-op-ThZ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="2.5" id="yq5-eg-Mhx"/>
+                <constraint firstItem="exA-op-ThZ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="0.5" id="yq5-eg-Mhx"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

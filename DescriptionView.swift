@@ -13,14 +13,14 @@ public class DescriptionView: UIView {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    var appDescriptionTitleFont: UIFont = UIFont.boldSystemFont(ofSize: 20.0) {
+    var appDescriptionTitleFont: UIFont = UIFont.boldSystemFont(ofSize: 18.0) {
         didSet {
             let attributedText = self.descriptionLabel.attributedText as! NSMutableAttributedString
             attributedText.addAttribute(.font, value: self.appDescriptionTitleFont, range: self.fullDescription.range(string: self.appDescriptionTitle))
         }
     }
     
-    var appDescriptionFont: UIFont = UIFont.systemFont(ofSize: 19.0, weight: .regular) {
+    var appDescriptionFont: UIFont = UIFont.systemFont(ofSize: 16.0, weight: .regular) {
         didSet {
             let attributedText = self.descriptionLabel.attributedText as! NSMutableAttributedString
             attributedText.addAttribute(.font, value: self.appDescriptionFont, range: self.fullDescription.range(string: self.appDescription))

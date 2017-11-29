@@ -30,7 +30,7 @@ public class ClosePageButton: UIButton {
     
     public override func didMoveToSuperview() {
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.widthAnchor.constraint(equalToConstant: self.frame.size.width).isActive = true
+        self.widthAnchor.constraint(equalToConstant: self.frame.size.width).isActive   = true
         self.heightAnchor.constraint(equalToConstant: self.frame.size.height).isActive = true
     }
     
