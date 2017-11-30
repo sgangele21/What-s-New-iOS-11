@@ -27,8 +27,7 @@ public class DescriptionStackView: UIStackView {
     
     public override func didMoveToSuperview() {
         super.didMoveToSuperview()
-        self.translatesAutoresizingMaskIntoConstraints = false
-        self.widthAnchor.constraint(equalToConstant: self.frame.size.width).isActive = true
+        
     }
     
 }
