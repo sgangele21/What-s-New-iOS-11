@@ -28,12 +28,6 @@ public class ClosePageButton: UIButton {
         self.setAttributedTitle(attributedString, for: .normal)
     }
     
-    public override func didMoveToSuperview() {
-        self.translatesAutoresizingMaskIntoConstraints = false
-        self.widthAnchor.constraint(equalToConstant: self.frame.size.width).isActive   = true
-        self.heightAnchor.constraint(equalToConstant: self.frame.size.height).isActive = true
-    }
-    
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
