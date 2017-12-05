@@ -29,7 +29,12 @@ public class ClosePageButton: UIButton {
     }
     
     public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+//        self.backgroundColor = backgroundColor
+//        self.layer.cornerRadius = 8.0
+//
+//        let attributedString = NSAttributedString(string: buttonTitle, attributes: self.attributedStringAttributes)
+//        self.setAttributedTitle(attributedString, for: .normal)
     }
     
     
