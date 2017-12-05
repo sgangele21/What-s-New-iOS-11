@@ -14,14 +14,14 @@ public class DescriptionStackView: UIStackView {
         super.init(frame: frame)
         self.spacing = 25.0
         self.axis         = .vertical
-        self.distribution = .equalSpacing
+        self.distribution = .fillEqually
     }
     
     public required init(coder: NSCoder) {
         super.init(coder: coder)
         self.spacing = 25.0
         self.axis         = .vertical
-        self.distribution = .equalSpacing
+        self.distribution = .fillEqually
     }
     
     public func addArrangedDescriptionView(descriptionView: DescriptionView) {
