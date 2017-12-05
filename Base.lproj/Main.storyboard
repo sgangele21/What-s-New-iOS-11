@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,11 +14,54 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="WhatsNewViewController" customModule="What_s_New_Page" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Wuf-c3-xAR" customClass="DescriptionStackView" customModule="What_s_New_Page" customModuleProvider="target">
+                                <rect key="frame" x="30" y="255" width="315" height="156"/>
+                                <variation key="heightClass=compact-widthClass=compact" axis="horizontal"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eC8-mr-QJT">
+                                <rect key="frame" x="30" y="708" width="315" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ggR-E0-tHL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="What's New" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPZ-Kf-Tfz" customClass="WhatsNewLabel" customModule="What_s_New_Page" customModuleProvider="target">
+                                <rect key="frame" x="30" y="167" width="315" height="58"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Wuf-c3-xAR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="0VY-0X-5w3"/>
+                            <constraint firstItem="Wuf-c3-xAR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0g1-vK-Z59"/>
+                            <constraint firstItem="RPZ-Kf-Tfz" firstAttribute="width" secondItem="Wuf-c3-xAR" secondAttribute="width" id="9VR-5Q-YFP"/>
+                            <constraint firstItem="RPZ-Kf-Tfz" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="E96-zz-Pzx"/>
+                            <constraint firstItem="eC8-mr-QJT" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Wuf-c3-xAR" secondAttribute="bottom" constant="10" id="Htd-5U-Rel"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wuf-c3-xAR" secondAttribute="trailing" constant="30" id="Ksq-M0-5fD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eC8-mr-QJT" secondAttribute="bottom" constant="20" id="MnQ-zL-cup"/>
+                            <constraint firstItem="Wuf-c3-xAR" firstAttribute="top" secondItem="RPZ-Kf-Tfz" secondAttribute="bottom" constant="30" id="T6K-HF-haX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eC8-mr-QJT" secondAttribute="trailing" constant="30" id="Ugd-aJ-8hF"/>
+                            <constraint firstItem="Wuf-c3-xAR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="brD-WV-7DM"/>
+                            <constraint firstItem="RPZ-Kf-Tfz" firstAttribute="leading" secondItem="Wuf-c3-xAR" secondAttribute="leading" id="is5-eh-e7M"/>
+                            <constraint firstItem="eC8-mr-QJT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="qhf-UN-Rll"/>
+                            <constraint firstItem="eC8-mr-QJT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zVg-eQ-6fp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="eC8-mr-QJT" id="eLZ-M0-U2X"/>
+                        <outlet property="stackView" destination="Wuf-c3-xAR" id="o9o-wC-QeW"/>
+                        <outlet property="whatsNewLabel" destination="RPZ-Kf-Tfz" id="Y46-D9-HTW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,17 +10,11 @@ import UIKit
 
 public class WhatsNewViewController: UIViewController {
     
-    public var welcomeToLabel:       WelcomeToLabel!
-    public var button:               ClosePageButton!
-    public var stackView:            DescriptionStackView!
+    @IBOutlet weak var whatsNewLabel: WhatsNewLabel!
     
-    private var screenWidth: CGFloat {
-        return self.view.frame.width
-    }
+    @IBOutlet weak var stackView: DescriptionStackView!
     
-    private var customWidth: CGFloat {
-        return screenWidth - (screenWidth / CGFloat(5.0))
-    }
+    @IBOutlet weak var button: UIButton!
     
     private var sampleDescriptionViews: [DescriptionView] {
         // Description One
@@ -39,51 +33,54 @@ public class WhatsNewViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.welcomeToLabel = self.createWelcomToLabel()
-        self.button         = self.createButton()
-        self.stackView      = self.createDescriptionStackView()
+//        self.whatsNewLabel = self.createWelcomToLabel()
+//        self.button         = self.createButton()
+//        self.stackView      = self.createDescriptionStackView()
+        self.button.layer.cornerRadius = 8.0
+        self.button.backgroundColor = UIColor.podcastPurple
+        self.button.setTitle("Listen Now", for: .normal)
         
         for descriptionView in self.sampleDescriptionViews {
             stackView.addArrangedDescriptionView(descriptionView: descriptionView)
-
         }
+        
 
     }
     
-    func createWelcomToLabel() -> WelcomeToLabel {
-        // Label
-        let welcomeToLabel = WelcomeToLabel(frame: CGRect(x: 0, y: 0, width: customWidth, height: 100), title: "Podcasts", tintColor: UIColor.podcastPurple)
-        welcomeToLabel.font = UIFont.systemFont(ofSize: 40.0, weight: .heavy)
-        welcomeToLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(welcomeToLabel)
-        welcomeToLabel.topAnchor.constraint    (equalTo: self.view.topAnchor, constant: 90).isActive  = true
-        welcomeToLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive            = true
-        welcomeToLabel.widthAnchor.constraint  (equalToConstant: welcomeToLabel.frame.width).isActive = true
-        
-        return welcomeToLabel
-    }
-    
-    func createButton() -> ClosePageButton {
-        // Button
-        let button = ClosePageButton(frame: CGRect(x: 0, y: 0, width: customWidth, height: 55), backgroundColor: UIColor.podcastPurple, buttonTitle: "Start Listening Now")
-        self.view.addSubview(button)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.bottomAnchor.constraint (equalTo: self.view.bottomAnchor, constant: -35).isActive = true
-        button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive               = true
-        button.widthAnchor.constraint  (equalToConstant: button.frame.size.width).isActive       = true
-        button.heightAnchor.constraint (equalToConstant: button.frame.size.height).isActive      = true
-        
-        return button
-    }
-    
-    func createDescriptionStackView() -> DescriptionStackView {
-        // Height of stack view is dynamically adjusted based on items in stack
-        let stackView = DescriptionStackView(frame: CGRect(x: 0, y: 0, width: customWidth, height: 0))
-        stackView.allignInMiddle(view: self.view)
-        stackView.widthAnchor.constraint(equalToConstant: stackView.frame.size.width).isActive = true
-        
-        return stackView
-    }
+//    func createWelcomToLabel() -> WelcomeToLabel {
+//        // Label
+//        let welcomeToLabel = WelcomeToLabel(frame: CGRect(x: 0, y: 0, width: customWidth, height: 100), title: "Podcasts", tintColor: UIColor.podcastPurple)
+//        welcomeToLabel.font = UIFont.systemFont(ofSize: 40.0, weight: .heavy)
+//        welcomeToLabel.translatesAutoresizingMaskIntoConstraints = false
+//        self.view.addSubview(welcomeToLabel)
+//        welcomeToLabel.topAnchor.constraint    (equalTo: self.view.topAnchor, constant: 90).isActive  = true
+//        welcomeToLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive            = true
+//        welcomeToLabel.widthAnchor.constraint  (equalToConstant: welcomeToLabel.frame.width).isActive = true
+//
+//        return welcomeToLabel
+//    }
+//
+//    func createButton() -> ClosePageButton {
+//        // Button
+//        let button = ClosePageButton(frame: CGRect(x: 0, y: 0, width: customWidth, height: 55), backgroundColor: UIColor.podcastPurple, buttonTitle: "Start Listening Now")
+//        self.view.addSubview(button)
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//        button.bottomAnchor.constraint (equalTo: self.view.bottomAnchor, constant: -35).isActive = true
+//        button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive               = true
+//        button.widthAnchor.constraint  (equalToConstant: button.frame.size.width).isActive       = true
+//        button.heightAnchor.constraint (equalToConstant: button.frame.size.height).isActive      = true
+//
+//        return button
+//    }
+//
+//    func createDescriptionStackView() -> DescriptionStackView {
+//        // Height of stack view is dynamically adjusted based on items in stack
+//        let stackView = DescriptionStackView(frame: CGRect(x: 0, y: 0, width: customWidth, height: 0))
+//        stackView.allignInMiddle(view: self.view)
+//        stackView.widthAnchor.constraint(equalToConstant: stackView.frame.size.width).isActive = true
+//
+//        return stackView
+//    }
     
 }
 
