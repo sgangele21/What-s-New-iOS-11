@@ -12,23 +12,23 @@ import Foundation
 public class WelcomeToLabel: UILabel {
     
     var title: String = "Company"
-    var lineAllignment: CGFloat = 1.0
+    private var lineAllignment: CGFloat = 1.0
     
-    var fullTitle: String {
+    private var fullTitle: String {
         return "Welcome \nto \(title)"
     }
     
-    var fullTitleRange: NSRange {
+    private var fullTitleRange: NSRange {
         let fullTitle = NSString(string: self.fullTitle)
         return fullTitle.range(of: self.fullTitle)
     }
     
-    var titleRange: NSRange {
+    private var titleRange: NSRange {
         let fullTitle = NSString(string: self.fullTitle)
         return fullTitle.range(of: self.title)
     }
     
-    var paragraphStyle: NSMutableParagraphStyle {
+    private var paragraphStyle: NSMutableParagraphStyle {
         let paragraphStyle                = NSMutableParagraphStyle()
         paragraphStyle.alignment          = .left
         paragraphStyle.lineBreakMode      = .byWordWrapping
@@ -37,7 +37,7 @@ public class WelcomeToLabel: UILabel {
         return paragraphStyle
     }
     
-    var whatsNewTitleFont: UIFont {
+    private var whatsNewTitleFont: UIFont {
         return UIFont.systemFont(ofSize: 48, weight: .heavy)
     }
     
@@ -68,6 +68,9 @@ public class WelcomeToLabel: UILabel {
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        self.lineAllignment = 0.85
+        self.attributedText = self.customAttributedText
+        self.numberOfLines  = 2
     }
 
 }
