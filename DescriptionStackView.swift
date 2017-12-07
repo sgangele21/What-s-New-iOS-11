@@ -14,7 +14,6 @@ public class DescriptionStackView: UIStackView {
         super.init(frame: frame)
         self.spacing = 25.0
         self.axis         = .vertical
-        // .fillEqually is the way to go..... Why?
         self.distribution = .fillEqually
     }
     

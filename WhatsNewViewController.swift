@@ -11,21 +11,20 @@ import UIKit
 public class WhatsNewViewController: UIViewController {
     
     @IBOutlet weak var whatsNewLabel: WhatsNewLabel!
-    
     @IBOutlet weak var stackView: DescriptionStackView!
+    @IBOutlet weak var closePageButton: ClosePageButton!
     
-    @IBOutlet weak var button: UIButton!
-    
+    // Create Description Views
     private var sampleDescriptionViews: [DescriptionView] {
         // Description One
         let descriptionViewFrame = CGRect(x: 0, y: 0, width: 400, height: 100)
-        let descriptionViewOne = DescriptionView.loadFromNib(frame: descriptionViewFrame, descriptionTitle: "Listen Anytime, Anywhere", description: "Discover free audio stories that entertain, inform, and inspire the world.", image: #imageLiteral(resourceName: "Podcast"))
+        let descriptionViewOne = DescriptionView.loadFromNib(frame: descriptionViewFrame, descriptionTitle: "Drag & Drop", description: "Drag and drop all items to any place on your iOS Device by long pressing on any item.", image: #imageLiteral(resourceName: "Drag And Drop Icon"))
         
         // Description Two
-        let descriptionViewTwo = DescriptionView.loadFromNib(frame: descriptionViewFrame, descriptionTitle: "Connect with Friends", description: "Explore shows you'll love, from entertainment and comedy to news and sports.", image: #imageLiteral(resourceName: "Playlists"))
+        let descriptionViewTwo = DescriptionView.loadFromNib(frame: descriptionViewFrame, descriptionTitle: "Search for more", description: "Searching allows you to find all items instantly, using a binary search algorithm.", image: #imageLiteral(resourceName: "SearchIcon"))
         
         // Description Three
-        let descriptionViewThree = DescriptionView.loadFromNib(frame: descriptionViewFrame, descriptionTitle: "Download for later", description: "Listen now, download for later and subscribe to get every new episode.", image: #imageLiteral(resourceName: "Play"))
+        let descriptionViewThree = DescriptionView.loadFromNib(frame: descriptionViewFrame, descriptionTitle: "Save for later", description: "Save items, to read them at a later time of your choosing. Visit the respective tab bar to see all your saved items.", image: #imageLiteral(resourceName: "HeartIcon"))
         
         return [descriptionViewOne,descriptionViewTwo,descriptionViewThree]
     }
@@ -33,54 +32,16 @@ public class WhatsNewViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.whatsNewLabel = self.createWelcomToLabel()
-//        self.button         = self.createButton()
-//        self.stackView      = self.createDescriptionStackView()
-        self.button.layer.cornerRadius = 8.0
-        self.button.backgroundColor = UIColor.podcastPurple
-        self.button.setTitle("Listen Now", for: .normal)
+        self.closePageButton.backgroundColor = UIColor.bluberryBlue
+        self.closePageButton.setTitle("Listen Now", for: .normal)
         
+        // Add Description Views
         for descriptionView in self.sampleDescriptionViews {
             stackView.addArrangedDescriptionView(descriptionView: descriptionView)
         }
         
 
     }
-    
-//    func createWelcomToLabel() -> WelcomeToLabel {
-//        // Label
-//        let welcomeToLabel = WelcomeToLabel(frame: CGRect(x: 0, y: 0, width: customWidth, height: 100), title: "Podcasts", tintColor: UIColor.podcastPurple)
-//        welcomeToLabel.font = UIFont.systemFont(ofSize: 40.0, weight: .heavy)
-//        welcomeToLabel.translatesAutoresizingMaskIntoConstraints = false
-//        self.view.addSubview(welcomeToLabel)
-//        welcomeToLabel.topAnchor.constraint    (equalTo: self.view.topAnchor, constant: 90).isActive  = true
-//        welcomeToLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive            = true
-//        welcomeToLabel.widthAnchor.constraint  (equalToConstant: welcomeToLabel.frame.width).isActive = true
-//
-//        return welcomeToLabel
-//    }
-//
-//    func createButton() -> ClosePageButton {
-//        // Button
-//        let button = ClosePageButton(frame: CGRect(x: 0, y: 0, width: customWidth, height: 55), backgroundColor: UIColor.podcastPurple, buttonTitle: "Start Listening Now")
-//        self.view.addSubview(button)
-//        button.translatesAutoresizingMaskIntoConstraints = false
-//        button.bottomAnchor.constraint (equalTo: self.view.bottomAnchor, constant: -35).isActive = true
-//        button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive               = true
-//        button.widthAnchor.constraint  (equalToConstant: button.frame.size.width).isActive       = true
-//        button.heightAnchor.constraint (equalToConstant: button.frame.size.height).isActive      = true
-//
-//        return button
-//    }
-//
-//    func createDescriptionStackView() -> DescriptionStackView {
-//        // Height of stack view is dynamically adjusted based on items in stack
-//        let stackView = DescriptionStackView(frame: CGRect(x: 0, y: 0, width: customWidth, height: 0))
-//        stackView.allignInMiddle(view: self.view)
-//        stackView.widthAnchor.constraint(equalToConstant: stackView.frame.size.width).isActive = true
-//
-//        return stackView
-//    }
     
 }
 
@@ -103,6 +64,10 @@ extension UIColor {
     
     static var podcastPurple: UIColor {
         return UIColor(displayP3Red: 113.0/255.0, green: 35.0/255.0, blue: 216.0/255.0, alpha: 1.0)
+    }
+    
+    static var bluberryBlue: UIColor {
+        return UIColor(displayP3Red: 0.0, green: 122.0/255.0, blue: 1.0, alpha: 1.0)
     }
     
 }

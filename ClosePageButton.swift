@@ -23,18 +23,13 @@ public class ClosePageButton: UIButton {
         super.init(frame: frame)
         self.backgroundColor = backgroundColor
         self.layer.cornerRadius = 8.0
-
         let attributedString = NSAttributedString(string: buttonTitle, attributes: self.attributedStringAttributes)
         self.setAttributedTitle(attributedString, for: .normal)
     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-//        self.backgroundColor = backgroundColor
-//        self.layer.cornerRadius = 8.0
-//
-//        let attributedString = NSAttributedString(string: buttonTitle, attributes: self.attributedStringAttributes)
-//        self.setAttributedTitle(attributedString, for: .normal)
+        self.layer.cornerRadius = 8.0
     }
     
     
